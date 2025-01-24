@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke of the Day</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Joke Website!</h1>
+    </header>
+    <main>
+        <form action="/" method="get">
+            <div class="options-container">
+                <div class="categories">
+                    <h2>Categories</h2>
+                    <label>
+                        <input type="checkbox" name="categories" value="Programming" <%= categories.includes('Programming') ? 'checked' : '' %>> Programming
+                    </label>
+                    <label>
+                        <input type="checkbox" name="categories" value="Dark" <%= categories.includes('Dark') ? 'checked' : '' %>> Dark
+                    </label>
+                    <label>
+                        <input type="checkbox" name="categories" value="Pun" <%= categories.includes('Pun') ? 'checked' : '' %>> Pun
+                    </label>
+                    <label>
+                        <input type="checkbox" name="categories" value="Spooky" <%= categories.includes('Spooky') ? 'checked' : '' %>> Spooky
+                    </label>
+                    <label>
+                        <input type="checkbox" name="categories" value="Christmas" <%= categories.includes('Christmas') ? 'checked' : '' %>> Christmas
+                    </label>
+                    <label>
+                        <input type="checkbox" name="categories" value="Misc" <%= categories.includes('Misc') ? 'checked' : '' %>> Misc
+                    </label>
+                </div>
+
+                <div class="blacklists">
+                    <h2>Blacklists</h2>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="nsfw" <%= blacklists.includes('nsfw') ? 'checked' : '' %>> NSFW
+                    </label>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="religious" <%= blacklists.includes('religious') ? 'checked' : '' %>> Religious
+                    </label>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="political" <%= blacklists.includes('political') ? 'checked' : '' %>> Political
+                    </label>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="racist" <%= blacklists.includes('racist') ? 'checked' : '' %>> Racist
+                    </label>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="sexist" <%= blacklists.includes('sexist') ? 'checked' : '' %>> Sexist
+                    </label>
+                    <label>
+                        <input type="checkbox" name="blacklist" value="explicit" <%= blacklists.includes('explicit') ? 'checked' : '' %>> Explicit
+                    </label>
+                </div>
+            </div>
+            <button type="submit">Get a Joke</button>
+        </form>
+
+        <div class="joke">
+            <h2>Joke:</h2>
+            <p><%= joke %></p>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
+
